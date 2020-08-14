@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+
+    <h1>Please provide the data for further processing...</h1>
+
+</div>
+
+<br>
+<div class="container">
+   
+    <form action="/submitPage" method="post">
+        {% csrf_token %}
+
+
+    
+      <div class="form-group">
+        <b><label for="sel1">Select Sex:</label></b>
+        <select class="form-control" id="sel1" name="sex">
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select>
+        <br>
+
+       
+            <b><label for="sel1">Age:</label></b>
+            <input type="text" class="form-control" id="usr" name="age" placeholder="Enter your age...">
+            <br>
+        
+
+
+
+        <b><label for="sel1">Systolic Pressure:</label></b>
+        <select class="form-control" id="sel1" name="systolic">
+        <option value="0">Normal(Less Than 120)</option>
+        <option value="1">Elevated(120 – 129)</option>
+
+        <option value="2" >High Blood Pressure Stage 1(130 – 139) </option>
+        <option value="3">High Blood Pressure Stage 2(140 -180)</option>
+        <option value="4">Hypertensive Crisis(More Than 180)</option>
+
+        </select>
+        <br>
+
+
+        <b><label for="sel1">Diastolic Pressure:</label></b>
+        <select class="form-control" id="sel1" name="diastolic">
+          <option value="0">Normal(Less Than 80)</option>
+           <option value="1" >High Blood Pressure Stage 1(80-89) </option>
+            <option value="2">High Blood Pressure Stage 2(90-119)</option>
+            <option value="3">Hypertensive Crisis(More than 120)</option>
+
+        </select>
+        <br>
+
+
+        <b><label for="sel1">Heart Rate</label></b>
+        <select class="form-control" name="heartRate">
+          <option value="0">Very Light(Less Than 80)</option>
+          <option value="1">Light(80-114)</option>
+
+            <option value="2" >Moderate(115-129)</option>
+            <option value="3">Hard(130-149)</option>
+            <option value="4">Maximum(More Than 150)</option>
+
+        </select>
+        <br>
+        
+
+        <b><label for="sel1">LDL Cholesterol</label></b>
+        <select class="form-control" name="hdl">
+          <option value="0">Optimal(Less Than 100)</option>
+          <option value="1">Near-Optimal(100 - 129)</option>
+
+            <option value="2" >Borderline High(130 - 159)</option>
+            <option value="3">High(160 - 189)</option>
+            <option value="4">Very High(More Than 190 )</option>
+
+        </select>
+        <br>
+
+
+        <b><label for="sel1">HDL Cholesterol</label></b>
+        <select class="form-control" name="ldl">
+          <option value="0">Low(Men, Less Than
+            40
+            )</option>
+          <option value="1">Low(Women, Less Than
+            50
+            ))</option>
+
+            <option value="2" >High(More Than  60 )</option>
+
+        </select>
+        <br>
+
+
+        <b><label for="sel1">Total Cholesterol</label></b>
+        <select class="form-control" name="totalCho">
+          <option value="0">Desirable(200)</option>
+          <option value="1">Borderline High(200 - 239 )</option>
+
+            <option value="2" >High(More Than 240 )</option>
+
+        </select>
+        <br>
+
+
+        <b><label for="sel1">Diabetes</label></b>
+        <select class="form-control" name="diabetes">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <br>
+
+
+        <b><label for="sel1">Height(Feet):</label></b>
+        <input type="text" class="form-control" id="usr" name="height" placeholder="Enter your height...">
+        <br>
+
+        <b><label for="sel1">Weight(KG):</label></b>
+        <input type="text" class="form-control" id="usr" name="weight" placeholder="Enter your weight...">
+        <br>
+
+
+
+        <b><label for="sel1">Smoker:</label></b>
+        <select class="form-control" name="smoker">
+          <option value="0">Non Smoker(0)</option>
+          <option value="1">BVery Light(1-4)</option>
+
+            <option value="2" >Light(5-9)</option>
+
+            <option value="3">Moderate(10-14)</option>
+
+            <option value="4">Hard(15-19)</option>
+            <option value="5">Maximum(More Than 20)</option>
+
+        </select>
+        <br>
+
+
+        <button type="submit" class="btn btn-success">submit</button>
+
+        
+    </form>
+    <div>
+      {% for message in messages %}
+      <h3>{{message}}</h3>
+      {% endfor %}
+  </div>
+  
+{% endblock %}
